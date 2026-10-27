@@ -119,3 +119,10 @@ No `OPENAI_API_KEY` was configured for the verified run. LLM token usage, billed
 - Redis uses AOF persistence, but production deployments still need backups, monitoring, secret management, and a GitHub App or similarly scoped credential.
 - The Qdrant server and Python client are kept on the compatible 1.12 line. Back up Qdrant data and follow its upgrade guidance before changing either version.
 - Retrieval and optional LLM review send changed patches and retrieved context only. Review the provider's data policy before using private repositories.
+
+## Resume
+# RepoPilot – AI-Augmented Code Review & Diagnostics Platform | Python, FastAPI, LangGraph, Qdrant, Docker, Redis, Celery
+- Built a dual-agent LangGraph workflow featuring an Auditor to flag security and code-quality issues in PR diff lines, and a Diagnostician to analyze before/after performance profiles.
+- Integrated Qdrant retrieval to surface indexed documentation during reviews, incorporating optional LLM-assisted analysis.
+- Implemented an HMAC-verified FastAPI webhook and Redis-backed Celery workers to securely enqueue GitHub PR analysis asynchronously with duplicate-delivery handling.
+- Verified the local webhook-to-result pipeline using 3 public PR diffs and locally generated, HMAC-signed events: 3/3 jobs succeeded, with a 1.07-second median turnaround in the test environment.
