@@ -1,0 +1,98 @@
+{
+  "scope": "signed webhook to terminal Celery result through the configured API, worker, GitHub API, and retrieval service",
+  "repository": "psf/requests",
+  "sample_size": 3,
+  "success_count": 3,
+  "failure_count": 0,
+  "latency_seconds_median": 1.0704,
+  "latency_seconds_p95": 3.7682,
+  "environment": {
+    "api_url": "http://127.0.0.1:8000",
+    "python": "3.11.3",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "github_token_configured": false,
+    "openai_api_key_configured": false,
+    "llm_token_usage_and_cost": "not measured: OPENAI_API_KEY is not configured"
+  },
+  "records": [
+    {
+      "pull_number": 7583,
+      "delivery_id": "6a4f69f6-0c52-4220-a59f-1ec15aa87e8e",
+      "diff": {
+        "state": "closed",
+        "changed_files": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "webhook_status": 202,
+      "task_id": "ab02b5ee-444b-4da2-ae30-2c7195e6495f",
+      "state": "SUCCESS",
+      "result": {
+        "repository": "psf/requests",
+        "pull_number": 7583,
+        "findings": [],
+        "skipped": [],
+        "context_ids": []
+      },
+      "error": null,
+      "elapsed_seconds": 3.7682
+    },
+    {
+      "pull_number": 7577,
+      "delivery_id": "ef086b58-4cc7-40e9-b24f-7481d313e340",
+      "diff": {
+        "state": "closed",
+        "changed_files": 5,
+        "additions": 83,
+        "deletions": 3
+      },
+      "webhook_status": 202,
+      "task_id": "9f491e86-416f-4818-bb3a-31492b5cc3ad",
+      "state": "SUCCESS",
+      "result": {
+        "repository": "psf/requests",
+        "pull_number": 7577,
+        "findings": [],
+        "skipped": [],
+        "context_ids": [
+          "stack-smoke"
+        ]
+      },
+      "error": null,
+      "elapsed_seconds": 1.0704
+    },
+    {
+      "pull_number": 7575,
+      "delivery_id": "87dc45d0-1be6-4ec8-95e3-1a5973df5513",
+      "diff": {
+        "state": "closed",
+        "changed_files": 9,
+        "additions": 148,
+        "deletions": 24
+      },
+      "webhook_status": 202,
+      "task_id": "c6814488-44ad-4dd5-9fa0-a1dca983d782",
+      "state": "SUCCESS",
+      "result": {
+        "repository": "psf/requests",
+        "pull_number": 7575,
+        "findings": [
+          {
+            "agent": "auditor",
+            "severity": "low",
+            "path": "tests/test_requests.py",
+            "line": 331,
+            "message": "Potential blocking call in an async execution path",
+            "evidence": "resp = requests.post(httpbin(\"redirect-to?url=post&status_code=302\"), data={\"test\": \"data\"})"
+          }
+        ],
+        "skipped": [],
+        "context_ids": [
+          "stack-smoke"
+        ]
+      },
+      "error": null,
+      "elapsed_seconds": 1.0418
+    }
+  ]
+}
